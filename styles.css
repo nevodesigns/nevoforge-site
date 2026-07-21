@@ -170,3 +170,63 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
   font-size: 12.5px;
   color: var(--ink-dim);
 }
+
+/* Drawing sheet cards */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.sheet {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  padding: 26px 28px 24px;
+}
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+.sheet > * { position: relative; }
+.sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  background: var(--bg);
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+.price {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.sheet h3 { font-size: 22px; margin-bottom: 12px; }
+.desc { font-size: 15.5px; color: var(--ink-dim); margin-bottom: 16px; }
+.provide {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--ink-dim);
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+.provide b { color: var(--accent); font-weight: 400; letter-spacing: 0.12em; }
+
+@media (max-width: 900px) {
+  .svc-grid { grid-template-columns: 1fr; max-width: 560px; }
+}
