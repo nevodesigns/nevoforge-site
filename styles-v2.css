@@ -281,9 +281,14 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 .vcard {
   margin: 0;
+  min-width: 0;
+  max-width: 100%;
   border: 1px solid var(--line-strong);
   background: var(--panel);
   padding: 10px;
@@ -293,8 +298,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 .vcard video {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  object-fit: contain;
   border: 1px solid var(--line);
   background: #000;
 }
@@ -308,8 +315,9 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 }
 .vcard-label b { color: var(--accent); font-weight: 400; margin-right: 8px; }
 
-@media (max-width: 900px) {
-  .video-grid { grid-template-columns: 1fr; max-width: 560px; }
+@media (max-width: 760px) {
+  .video-grid { grid-template-columns: 1fr; }
+  .vcard { max-width: 560px; }
 }
 
 /* Process */
