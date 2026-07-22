@@ -64,7 +64,8 @@ a:focus-visible, button:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
-img { max-width: 100%; display: block; }
+/* global guard: media can never be wider than its container */
+img, video { max-width: 100%; height: auto; display: block; }
 
 .skip-link {
   position: absolute;
