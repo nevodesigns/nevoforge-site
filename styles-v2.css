@@ -269,6 +269,49 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
   .sample-grid { grid-template-columns: 1fr; max-width: 560px; }
 }
 
+/* Watch */
+.section-h {
+  font-family: var(--display);
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.vcard {
+  margin: 0;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  padding: 10px;
+  transition: border-color 0.15s ease;
+}
+.vcard:hover { border-color: var(--accent); }
+.vcard video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  background: #000;
+}
+.vcard-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  padding: 12px 6px 4px;
+  color: var(--ink-dim);
+}
+.vcard-label b { color: var(--accent); font-weight: 400; margin-right: 8px; }
+
+@media (max-width: 900px) {
+  .video-grid { grid-template-columns: 1fr; max-width: 560px; }
+}
+
 /* Process */
 .dim {
   position: relative;
