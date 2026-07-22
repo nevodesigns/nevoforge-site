@@ -35,6 +35,13 @@ html { scroll-behavior: smooth; }
   html { scroll-behavior: auto; }
 }
 
+/* Never allow sideways scrolling anywhere on the page */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--bg);
   background-image:
@@ -301,7 +308,10 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
   max-width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  /* cap height so a video never grows taller than the screen, like a player */
+  max-height: 60vh;
   object-fit: contain;
+  margin: 0 auto;
   border: 1px solid var(--line);
   background: #000;
 }
